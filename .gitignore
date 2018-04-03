@@ -1,0 +1,8 @@
+# Pycharm trash
+.idea
+__pycache__/
+
+# virtualenv
+.venv
+venv/
+venv

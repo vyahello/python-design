@@ -1,5 +1,5 @@
 import os
-import threading
+from threading import Thread
 from urllib.parse import urljoin
 from urllib.request import urlretrieve
 import httplib2
@@ -7,11 +7,11 @@ from bs4 import BeautifulSoup
 from patterns.singleton.singleton import Singleton
 
 
-class ImageDownloaderThread(threading.Thread):
+class ImageDownloaderThread(Thread):
     """A thread for downloading images in parallel."""
 
     def __init__(self, thread_id: int, name: str, counter: int) -> None:
-        threading.Thread.__init__(self)
+        super().__init__()
         self.name = name
 
     def run(self) -> None:
