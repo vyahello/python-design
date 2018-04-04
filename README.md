@@ -1,7 +1,14 @@
 # Python Design Patterns
+Describes most popular design patterns in python.
 
 ## Singleton
 Singleton is a design pattern that allows to create only one instance of an object.
+- `web_crawler.py` tool allows to download images from web sources.
+
+Run `web_crawler.py` tool
+```bash
+~ python web_crawler.py
+```
 1. Classic Singleton.
 
 Allows to create one unique object. All other instances will be the same.
@@ -13,8 +20,15 @@ All instances are distinguished but remain the same state and behaviour.
 Note - modules in python are singletons.
 
 ## Factory
+- `factory_web_access_v1.py` and `factory_web_access_v2.py` tools allow to instantiate Http(s), Ftp(s) connections
+- `factory_method_web_connector.py` tool allow to instantiate web access via http(s), ftp(s)
 Factory - class for creating other classes.
 
+Run `factory_web_access_v1.py` and `factory_web_access_v2.py` tools
+```bash
+~ python factory_web_access_v1.py
+~ python factory_web_access_v2.py
+```
 1. Factory method
 
 Factory method - defines an interface for creating an object. Makes code tied not to concrete classes but to interfaces.
@@ -26,6 +40,13 @@ of objects that do some work together. Abstract factory is used to define the in
 Benefit - isolates the creation of objects from client, giving client possibility to access them via interface.
 
 ## Facade
+- `facade_foracast.py` tool allows to get weather from different zones.
+
+Run `facade_foracast.py` tool
+```bash
+~ python facade_foracast.py
+```
+
 Facade is a design pattern that provides unified interface instead of a set of interfaces. Used when it is needed to 
 provide a simpler interface to a complex subsystem. All interaction with the client goes through the Facade. 
 All dependencies are using inside the facade code but not related to client code.
@@ -55,11 +76,24 @@ into small subsystems
 ```
 
 ## Proxy and Observer
+- `proxy.py` tool allows to delegate heavy tasks for other objects
+
+Run `proxy.py` tool
+```bash
+~ python proxy.py
+```
+
+- `time_observer.py` tool allows to  to measure time for USA and EU timezones.
+
+Run `time_observer.py` tool
+```bash
+~ python time_observer.py
+```
 1. Proxy
 
 Proxy is a design pattern that facilitates objects and is functioning as an interface of other class.
 It helps to decouple the client code from the object that client code uses.
-Mainly used when you need to defer initialising of an object untill it is indeed necessary (it may occupy lots of memory).
+Mainly used when you need to defer initialising of an object until it is indeed necessary (it may occupy lots of memory).
 ```
 UML diagram
 
@@ -81,6 +115,13 @@ multiple clients). It is kind of publish-subscribe pattern like in twitter when 
 will be notified.
 
 ## Command
+- `unix_commands.py` tool allow to run simple unix commands.
+
+Run `unix_commands.py` tool
+```bash
+~ python unix_commands.py
+```
+
 Command pattern is a great design pattern for unix type commands.
 Provides an interface to perform some job and encapsulates all necessary info to do it in one object call.
 Disadvantage - separate class for each individual command.
@@ -98,6 +139,12 @@ that does some work.
 ```
 
 ## Template method
+- `news_parser.py` tool allows to parse top 3 news from google and yahoo sources.
+
+Run `news_parser.py` tool
+```bash
+~ python news_parser.py
+```
 Main idea - create a method that will hold a sequence of steps (primitive operations).
 
 ```
@@ -125,4 +172,4 @@ Hooks are used for small changes in an algorithm while avoiding code duplication
 - run `pip install -r requirements.txt` to install all require python packages
 
 ### Run unittests
-Run `pytest -v` from shell in the root directory of the repository.
+Run `pytest -v` from shell in the root directory of the repository.  
