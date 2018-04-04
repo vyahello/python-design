@@ -1,4 +1,4 @@
-from patterns.patterns.observer.observers import USATimeObserver, EUTimeObserver
+from patterns.observer.observers import USATimeObserver, EUTimeObserver
 
 _timestamp = 0.1
 _usa_name = 'USATimeObserver'

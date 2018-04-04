@@ -1,4 +1,4 @@
-from patterns.patterns.factory.abstract_factory.web_access_v2.protocols import HTTPProtocol, HTTPSecureProtocol, \
+from patterns.factory.abstract_factory.web_access_v2.protocols import HTTPProtocol, HTTPSecureProtocol, \
     FTPProtocol, FTPSecureProtocol
 
 _http = 'http'

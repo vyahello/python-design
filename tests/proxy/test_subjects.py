@@ -1,4 +1,4 @@
-from patterns.patterns.proxy.subjects import RealSubject, ProxySubject
+from patterns.proxy.subjects import RealSubject, ProxySubject
 
 
 def test_real_subject():

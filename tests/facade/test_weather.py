@@ -1,4 +1,4 @@
-from patterns.patterns.facade.weather.facadeweather import FacadeWeather
+from patterns.facade.weather.facadeweather import FacadeWeather
 
 _temp = [23.01, 25.03, 20.60]
 

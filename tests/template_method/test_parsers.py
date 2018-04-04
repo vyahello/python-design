@@ -1,5 +1,5 @@
 import pytest
-from patterns.patterns.template_method.parsers import AbstractNewsParser, YahooParser, GoogleParser
+from patterns.template_method.parsers import AbstractNewsParser, YahooParser, GoogleParser
 
 _yahoo_url = 'http://news.yahoo.com/rss/'
 _google_url = 'https://news.google.com/news/feeds?output=atom'

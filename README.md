@@ -88,10 +88,10 @@ Disadvantage - separate class for each individual command.
 ```
 UML diagram
 
-                                                          <<interface>>
-                                        Invoker-----calls-->Command: execute()
-                                                                |
-                                        Client-----creates->ConcreteCommand: execute()--delegates-->Receiver: do_work()
+                                               <<interface>>
+                               Invoker-----calls-->Command: execute()
+                                                       |
+                               Client-----creates->ConcreteCommand: execute()--delegates-->Receiver: do_work()
 
 Invoker calls execute() of an object with Command interface. It is object of ConcreteCommand class in which the execute method calls an object of the Receiver
 that does some work.
@@ -104,9 +104,9 @@ Main idea - create a method that will hold a sequence of steps (primitive operat
 UML diagram
 
 
-                                        ABC: template_method(), primitive_oper1(), primitive_oper2() - template_method(), primitive_oper1(), primitive_oper2()
-                                        |
-                                        ConcreteClass: primitive_oper2()
+ABC: template_method(), primitive_oper1(), primitive_oper2() - template_method(), primitive_oper1(), primitive_oper2()
+|
+ConcreteClass: primitive_oper2()
 ```
 
 Hook - method that can be defined in abstract class and can be overridden in concrete classes but not obligated to do it.

@@ -1,4 +1,4 @@
-from patterns.patterns.factory.factory_method.web_access.ports import HttpPort, HttpSecurePort, FTPPort
+from patterns.factory.factory_method.web_access.ports import HttpPort, HttpSecurePort, FTPPort
 
 _http = '80'
 _https = '443'

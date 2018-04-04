@@ -1,4 +1,4 @@
-from patterns.patterns.facade.weather.converter import KelToCel
+from patterns.facade.weather.converter import KelToCel
 
 _kelvin = 300
 
