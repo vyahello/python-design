@@ -1,11 +1,9 @@
 # Python Design Patterns
-Describes most popular design patterns in python.
+Describes popular design patterns in python.
 
 ## Singleton
 Singleton is a design pattern that allows to create only one instance of an object.
 - `web_crawler.py` tool allows to download images from web sources.
-
-Run `web_crawler.py` tool
 ```bash
 ~ python web_crawler.py
 ```
@@ -24,7 +22,6 @@ Note - modules in python are singletons.
 - `factory_method_web_connector.py` tool allow to instantiate web access via http(s), ftp(s)
 Factory - class for creating other classes.
 
-Run `factory_web_access_v1.py` and `factory_web_access_v2.py` tools
 ```bash
 ~ python factory_web_access_v1.py
 ~ python factory_web_access_v2.py
@@ -56,36 +53,34 @@ to use the machine.
 UML diagram
 
 
-                                            module1    module2    module3
-                                            |            |           |
-                                            --------------------------
-                                                         |
-                                                         |
-                                                       Facade:
-                                                      do_some()
-                                                         |
-                                                         |
-                                                      do_some()
-                                                         |
-                                                       Client
+                module1    module2    module3
+                |            |           |
+                --------------------------
+                             |
+                             |
+                           Facade:
+                          do_some()
+                             |
+                             |
+                          do_some()
+                             |
+                           Client
                                             
-client -> Facade: do_some() -> facade uses 3 submodules inside, call them and returns some response to 
-the client (via do_some()), client doesnt need to know about this 3 modules.
-it can just call the Facade and receive what it wants. Using decomposition principle break down complex system 
-into small subsystems
-```
 
+```
+Client -> Facade: do_some() -> facade uses 3 submodules inside, call them and returns some response to 
+the client (via do_some()), client doesnt need to know about this 3 modules.
+It can just call the Facade and receive what it wants. Using decomposition principle break down complex system 
+into small subsystems.
 ## Proxy and Observer
 - `proxy.py` tool allows to delegate heavy tasks for other objects
 
-Run `proxy.py` tool
 ```bash
 ~ python proxy.py
 ```
 
 - `time_observer.py` tool allows to  to measure time for USA and EU timezones.
 
-Run `time_observer.py` tool
 ```bash
 ~ python time_observer.py
 ```
@@ -97,17 +92,14 @@ Mainly used when you need to defer initialising of an object until it is indeed 
 ```
 UML diagram
 
-                                                    <<interface>>
-                                                       Subject
-                                                      do_some()
-                                          ________________|_________________       
-                                          |                                |
+                         <<interface>>
+                            Subject
+                           do_some()
+               ________________|_________________       
+               |                                |
                                           
-Client --uses--> Proxy: do_some()--delegates-> RealSubject: do_some()
-
-Proxy and RealSubject are inherited from the same interface - Subject.
-Client uses Proxy which delegates calls to RealSubject object.
 ```
+Client --uses--> Proxy: do_some()--delegates-> RealSubject: do_some().Proxy and RealSubject are inherited from the same interface - Subject.Client uses Proxy which delegates calls to RealSubject object.
 2. Observer
 
 Observer is a design pattern when you need to implement one-to-others relationship (convey the same information to 
@@ -117,7 +109,6 @@ will be notified.
 ## Command
 - `unix_commands.py` tool allow to run simple unix commands.
 
-Run `unix_commands.py` tool
 ```bash
 ~ python unix_commands.py
 ```
@@ -129,19 +120,17 @@ Disadvantage - separate class for each individual command.
 ```
 UML diagram
 
-                                               <<interface>>
-                               Invoker-----calls-->Command: execute()
-                                                       |
-                               Client-----creates->ConcreteCommand: execute()--delegates-->Receiver: do_work()
+                              <<interface>>
+              Invoker-----calls-->Command: execute()
+                                      |
+              Client-----creates->ConcreteCommand: execute()--delegates-->Receiver: do_work()
 
-Invoker calls execute() of an object with Command interface. It is object of ConcreteCommand class in which the execute method calls an object of the Receiver
-that does some work.
 ```
-
+Invoker calls execute() of an object with Command interface.
+It is object of ConcreteCommand class in which the execute method calls an object of the Receiver that does some work.
 ## Template method
 - `news_parser.py` tool allows to parse top 3 news from google and yahoo sources.
 
-Run `news_parser.py` tool
 ```bash
 ~ python news_parser.py
 ```
@@ -151,11 +140,13 @@ Main idea - create a method that will hold a sequence of steps (primitive operat
 UML diagram
 
 
-ABC: template_method(), primitive_oper1(), primitive_oper2() - template_method(), primitive_oper1(), primitive_oper2()
+ABC:  template_method(),
+|     primitive_oper1(),
+|     primitive_oper2() - template_method(),
+|     primitive_oper1(), primitive_oper2()
 |
 ConcreteClass: primitive_oper2()
 ```
-
 Hook - method that can be defined in abstract class and can be overridden in concrete classes but not obligated to do it.
 Hooks are used for small changes in an algorithm while avoiding code duplication.
 
