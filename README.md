@@ -1,5 +1,5 @@
 # Python Design Patterns
-Inspired by Packt book - "Learning Python Design Pattenrs" that describes popular design patterns in python.
+Inspired by Packt book - "Learning Python Design Patterns" that describes popular design patterns in python.
 
 ## Singleton
 Singleton is a design pattern that allows to create only one instance of an object.
